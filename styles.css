@@ -316,8 +316,8 @@ h4 { font-size: 1.75rem; }
 }
 
 .hero-avatar {
-    width: 140px;
-    height: 140px;
+    width: 200px;
+    height: 200px;
     border-radius: 50%;
     background: var(--gradient-hero);
     display: flex;
@@ -763,3 +763,4 @@ section {
     transform: translateY(0);
 
 }
+
