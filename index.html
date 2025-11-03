@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abhinav Jadala - Computer Science Student | Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav id="navigation" class="nav">
+        <div class="container nav-container">
+            <button class="nav-logo" onclick="scrollToSection('home')">AJ</button>
+            
+            <div class="nav-menu" id="nav-menu">
+                <button class="nav-link active" data-section="home" onclick="scrollToSection('home')">Home</button>
+                <button class="nav-link" data-section="about" onclick="scrollToSection('about')">About</button>
+                <button class="nav-link" data-section="achievements" onclick="scrollToSection('achievements')">Achievements</button>
+                <button class="nav-link" data-section="projects" onclick="scrollToSection('projects')">Projects</button>
+                <button class="nav-link" data-section="education" onclick="scrollToSection('education')">Education</button>
+                <button class="nav-link" data-section="contact" onclick="scrollToSection('contact')">Contact</button>
+            </div>
+            
+            <button class="nav-toggle" id="nav-toggle" onclick="toggleMobileMenu()">
+                <svg class="nav-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </div>
+        
+        <div class="nav-mobile" id="nav-mobile">
+            <button class="nav-mobile-link" onclick="scrollToSection('home'); closeMobileMenu()">Home</button>
+            <button class="nav-mobile-link" onclick="scrollToSection('about'); closeMobileMenu()">About</button>
+            <button class="nav-mobile-link" onclick="scrollToSection('achievements'); closeMobileMenu()">Achievements</button>
+            <button class="nav-mobile-link" onclick="scrollToSection('projects'); closeMobileMenu()">Projects</button>
+            <button class="nav-mobile-link" onclick="scrollToSection('education'); closeMobileMenu()">Education</button>
+            <button class="nav-mobile-link" onclick="scrollToSection('contact'); closeMobileMenu()">Contact</button>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero-section">
+            <div class="hero-decoration hero-decoration-1"></div>
+            <div class="hero-decoration hero-decoration-2"></div>
+            <div class="hero-decoration hero-decoration-3"></div>
+            
+            <div class="container hero-container">
+                <div class="hero-avatar">AJ</div>
+                
+                <h1 class="hero-title">
+                    Hi. I'm <span class="gradient-text">Abhinav Jadala</span>
+                    <span class="hero-star">✦</span>
+                </h1>
+                
+                <h2 class="hero-subtitle">A Computer Science Student</h2>
+                
+                <p class="hero-description">
+                    Passionate about building innovative solutions through code, exploring
+                    machine learning, and creating impactful software.
+                </p>
+                
+                <div class="hero-buttons">
+                    <button class="btn btn-primary" onclick="scrollToSection('projects')">
+                        View My Work
+                    </button>
+                    <button class="btn btn-outline" onclick="scrollToSection('contact')">
+                        Get In Touch
+                    </button>
+                </div>
+                
+                <div class="hero-social">
+                    <a href="https://github.com/CodetoExcel12" target="_blank" rel="noopener noreferrer" class="social-link">
+                        <svg class="social-icon" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                        </svg>
+                    </a>
+                    <a href="https://www.linkedin.com/in/abhinav-jadala-2764672a8/" target="_blank" rel="noopener noreferrer" class="social-link">
+                        <svg class="social-icon" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                        </svg>
+                    </a>
+                    <a href="mailto:abhinav.jadala.vnitcsetnp@gmail.com" class="social-link">
+                        <svg class="social-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about-section">
+            <div class="container">
+                <h2 class="section-title">
+                    About <span class="gradient-text">Me</span>
+                </h2>
+                <p class="section-description">
+                    Get to know more about my skills, interests, and what drives me
+                </p>
+                
+                <div class="achievements-grid">
+                    <article class="card fade-in">
+                        <h3 class="card-title">
+                            <span class="emoji">👨‍💻</span> Bio
+                        </h3>
+                        <div class="card-content">
+                            <p>
+                                I'm a Computer Science and Engineering student at
+                                <strong style="color: var(--color-primary);">Visvesvaraya National Institute of Technology, Nagpur</strong>,
+                                passionate about building innovative software solutions.
+                            </p>
+                            <p>
+                                With a strong foundation in data structures and algorithms, I
+                                enjoy tackling complex problems and creating efficient systems.
+                                My journey in computer science started with achieving
+                                <strong style="color: var(--color-primary);">100% in Class X</strong> and continued with consistent academic excellence.
+                            </p>
+                            <p>
+                                Beyond academics, I'm an active member of the cultural
+                                community, serving as <strong style="color: var(--color-primary);">Cultural Secretary</strong> and singing with
+                                <strong style="color: var(--color-primary);">Octaves</strong>.
+                            </p>
+                        </div>
+                    </article>
+                    
+                    <article class="card fade-in">
+                        <h3 class="card-title">
+                            <span class="emoji">🎯</span> Beyond Coding
+                        </h3>
+                        <div class="card-content">
+                            <div style="margin-bottom: 1.5rem;">
+                                <h4 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 1rem; color: var(--color-foreground);">Leadership & Culture</h4>
+                                <ul class="achievement-list">
+                                    <li>Cultural Secretary, 3rd Year CSE Department Council (2025-2026)</li>
+                                    <li>Singer at Octaves (2023 - present)</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 1rem; color: var(--color-foreground);">Hobbies</h4>
+                                <ul class="achievement-list">
+                                    <li>Playing Cricket</li>
+                                    <li>Singing</li>
+                                    <li>Reading Books</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Achievements Section -->
+        <section id="achievements" class="achievements-section">
+            <div class="container">
+                <h2 class="section-title">
+                    <span class="gradient-text">Achievements</span>
+                </h2>
+                <p class="section-description">
+                    Celebrating academic excellence and personal milestones
+                </p>
+                
+                <div class="achievements-grid">
+                    <article class="achievement-card fade-in">
+                        <div class="achievement-icon">🏆</div>
+                        <h3 class="card-title">Academic Excellence</h3>
+                        <ul class="achievement-list">
+                            <li><strong>Perfect Score in Class X (2021)</strong> - Achieved 100% marks, demonstrating exceptional academic performance and dedication</li>
+                            <li><strong>Outstanding Class XII Performance</strong> - Secured 98.4% from Sri Chaitanya Junior College, Hyderabad</li>
+                            <li><strong>JEE Main Success</strong> - Qualified for admission to VNIT Nagpur, one of India's premier technical institutions</li>
+                            <li><strong>Consistent Academic Performance</strong> - Maintaining CGPA of 6.08 at VNIT while actively participating in extracurriculars</li>
+                        </ul>
+                    </article>
+                    
+                    <article class="achievement-card fade-in">
+                        <div class="achievement-icon">🎓</div>
+                        <h3 class="card-title">Technical Expertise</h3>
+                        <ul class="achievement-list">
+                            <li><strong>Data Structures Mastery</strong> - Implemented complex data structures including B-Trees and custom memory allocators</li>
+                            <li><strong>Algorithm Design</strong> - Developed efficient algorithms for big integer arithmetic and parking management systems</li>
+                            <li><strong>Project Development</strong> - Successfully completed multiple C programming projects demonstrating real-world problem-solving</li>
+                            <li><strong>Coursework Excellence</strong> - Strong foundation in Object Oriented Methodology and Data Structures</li>
+                        </ul>
+                    </article>
+                    
+                    <article class="achievement-card fade-in">
+                        <div class="achievement-icon">🎭</div>
+                        <h3 class="card-title">Leadership & Culture</h3>
+                        <ul class="achievement-list">
+                            <li><strong>Cultural Secretary (2025-2026)</strong> - Leading cultural initiatives for 3rd Year CSE Department Council</li>
+                            <li><strong>Octaves Member</strong> - Active singer in college music group since 2023, performing at various events</li>
+                            <li><strong>Team Collaboration</strong> - Experience working in diverse teams combining technical and creative skills</li>
+                            <li><strong>Event Management</strong> - Organizing and coordinating cultural events and activities</li>
+                        </ul>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="projects-section">
+            <div class="container">
+                <h2 class="section-title">
+                    Featured <span class="gradient-text">Projects</span>
+                </h2>
+                <p class="section-description">
+                    A showcase of my technical projects demonstrating problem-solving and programming skills
+                </p>
+                
+                <div class="projects-grid">
+                    <article class="project-card fade-in">
+                        <h3 class="project-title">Smart Car Parking System</h3>
+                        <p style="color: var(--color-muted); font-size: 0.95rem; margin-bottom: 1rem;">📅 April 2025</p>
+                        <p class="project-description">
+                            A comprehensive parking management system utilizing B-Trees for efficient vehicle tracking and slot allocation. Features real-time entry/exit monitoring, dynamic slot assignment based on membership tiers, and advanced analytics for ranking vehicles and slots.
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag">C Programming</span>
+                            <span class="tag">B-Trees</span>
+                            <span class="tag">Data Structures</span>
+                        </div>
+                        <a href="https://github.com/CodetoExcel12/Smart-Car-parking-System" target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="width: 100%;">
+                            View Source Code →
+                        </a>
+                    </article>
+                    
+                    <article class="project-card fade-in">
+                        <h3 class="project-title">Heap Management System</h3>
+                        <p style="color: var(--color-muted); font-size: 0.95rem; margin-bottom: 1rem;">📅 February 2025</p>
+                        <p class="project-description">
+                            Custom dynamic memory allocator implemented in C with manual heap management. Simulates real-world memory operations including allocation, deallocation, garbage collection, and heap visualization for educational purposes.
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag">C Programming</span>
+                            <span class="tag">Memory Management</span>
+                            <span class="tag">System Design</span>
+                        </div>
+                        <a href="https://github.com/CodetoExcel12/Heap-Managment" target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="width: 100%;">
+                            View Source Code →
+                        </a>
+                    </article>
+                    
+                    <article class="project-card fade-in">
+                        <h3 class="project-title">Big Integer Arithmetic System</h3>
+                        <p style="color: var(--color-muted); font-size: 0.95rem; margin-bottom: 1rem;">📅 January 2025</p>
+                        <p class="project-description">
+                            A robust system for performing arithmetic operations on arbitrarily large integers that exceed standard data type limits. Implements custom structures and digit-by-digit algorithms for all basic arithmetic operations.
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag">C Programming</span>
+                            <span class="tag">Algorithm Design</span>
+                        </div>
+                        <a href="https://github.com/CodetoExcel12/Big-Int" target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="width: 100%;">
+                            View Source Code →
+                        </a>
+                    </article>
+                </div>
+                
+                <div style="margin-top: 4rem; text-align: center;">
+                    <p style="color: var(--color-muted); margin-bottom: 2rem; font-size: 1.1rem;">More projects available on my GitHub</p>
+                    <a href="https://github.com/abhinavjadala" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                        View All Projects →
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education Section -->
+        <section id="education" class="education-section">
+            <div class="container">
+                <h2 class="section-title">
+                    <span class="gradient-text">Education</span>
+                </h2>
+                <p class="section-description">
+                    My academic journey and achievements
+                </p>
+                
+                <div class="achievements-grid">
+                    <article class="achievement-card fade-in" style="border-color: var(--color-primary);">
+                        <div class="achievement-icon">🎓</div>
+                        <h3 class="card-title">B.Tech in Computer Science</h3>
+                        <p style="color: var(--color-primary); font-weight: 700; margin-bottom: 0.5rem;">2023 - 2027</p>
+                        <p style="color: var(--color-muted); margin-bottom: 1rem;">Visvesvaraya National Institute of Technology, Nagpur</p>
+                        <p style="font-size: 1.25rem; font-weight: 700; color: var(--color-foreground); margin-bottom: 0.5rem;">CGPA: 6.08</p>
+                        <p style="color: var(--color-muted); font-size: 0.9rem;">(Current)</p>
+                    </article>
+                    
+                    <article class="achievement-card fade-in">
+                        <div class="achievement-icon">📚</div>
+                        <h3 class="card-title">Class XII (HSC)</h3>
+                        <p style="color: var(--color-primary); font-weight: 700; margin-bottom: 0.5rem;">2023</p>
+                        <p style="color: var(--color-muted); margin-bottom: 1rem;">Sri Chaitanya Junior College, Hyderabad</p>
+                        <p style="font-size: 1.5rem; font-weight: 800; color: var(--color-foreground);">98.4%</p>
+                    </article>
+                    
+                    <article class="achievement-card fade-in">
+                        <div class="achievement-icon">⭐</div>
+                        <h3 class="card-title">Class X (SSC)</h3>
+                        <p style="color: var(--color-primary); font-weight: 700; margin-bottom: 0.5rem;">2021</p>
+                        <p style="color: var(--color-muted); margin-bottom: 1rem;">Tejaswi High School, Warangal</p>
+                        <p style="font-size: 1.5rem; font-weight: 800; background: var(--gradient-hero); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">100.0%</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact-section">
+            <div class="container">
+                <h2 class="section-title">
+                    Get In <span class="gradient-text">Touch</span>
+                </h2>
+                <p class="section-description">
+                    I'm always open to discussing new projects, opportunities, or just having a chat about technology
+                </p>
+                
+                <div class="achievements-grid">
+                    <article class="card fade-in">
+                        <h3 class="card-title">📧 Contact Information</h3>
+                        <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+                            <div>
+                                <p style="font-weight: 700; color: var(--color-foreground); margin-bottom: 0.5rem;">Email</p>
+                                <a href="mailto:abhinav.jadala.vnitcsetnp@gmail.com" style="color: var(--color-primary); text-decoration: none;">
+                                    abhinav.jadala.vnitcsetnp@gmail.com
+                                </a>
+                            </div>
+                            <div>
+                                <p style="font-weight: 700; color: var(--color-foreground); margin-bottom: 0.5rem;">Phone</p>
+                                <a href="tel:+919849552006" style="color: var(--color-primary); text-decoration: none;">
+                                    +91-9849552006
+                                </a>
+                            </div>
+                            <div>
+                                <p style="font-weight: 700; color: var(--color-foreground); margin-bottom: 0.5rem;">Location</p>
+                                <p style="color: var(--color-muted);">Nagpur, India</p>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <article class="card fade-in">
+                        <h3 class="card-title">🔗 Connect With Me</h3>
+                        <div style="display: flex; flex-direction: column; gap: 1.5rem; margin-bottom: 2rem;">
+                            <a href="https://github.com/CodetoExcel12" target="_blank" rel="noopener noreferrer" style="display: flex; align-items: center; gap: 1rem; text-decoration: none; color: inherit;">
+                                <div style="width: 50px; height: 50px; background: rgba(0, 212, 255, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                                    <svg style="width: 24px; height: 24px; color: var(--color-primary);" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <p style="font-weight: 700; color: var(--color-foreground);">GitHub</p>
+                                    <p style="color: var(--color-muted); font-size: 0.9rem;">@abhinavjadala</p>
+                                </div>
+                            </a>
+                            
+                            <a href="https://www.linkedin.com/in/abhinav-jadala-2764672a8/" target="_blank" rel="noopener noreferrer" style="display: flex; align-items: center; gap: 1rem; text-decoration: none; color: inherit;">
+                                <div style="width: 50px; height: 50px; background: rgba(0, 212, 255, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                                    <svg style="width: 24px; height: 24px; color: var(--color-primary);" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <p style="font-weight: 700; color: var(--color-foreground);">LinkedIn</p>
+                                    <p style="color: var(--color-muted); font-size: 0.9rem;">@abhinavjadala</p>
+                                </div>
+                            </a>
+                        </div>
+                        
+                        <a href="mailto:abhinav.jadala.vnitcsetnp@gmail.com" class="btn btn-primary" style="width: 100%;">
+                            Send Me an Email →
+                        </a>
+                    </article>
+                </div>
+                
+                <article class="card fade-in" style="margin-top: 3rem; text-align: center; max-width: 800px; margin-left: auto; margin-right: auto;">
+                    <p style="font-size: 1.15rem; line-height: 1.8; color: var(--color-muted);">
+                        Whether you have a project in mind, need technical expertise, or just want to connect, feel free to reach out. I'm always excited to collaborate on interesting projects and explore new opportunities in software development and machine learning.
+                    </p>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-text">
+                    <p>&copy; <span id="year">2024</span> Abhinav Jadala. All rights reserved.</p>
+                </div>
+                <div class="footer-links">
+                    <a href="#home" class="footer-link">Home</a>
+                    <a href="#about" class="footer-link">About</a>
+                    <a href="#achievements" class="footer-link">Achievements</a>
+                    <a href="#projects" class="footer-link">Projects</a>
+                    <a href="#education" class="footer-link">Education</a>
+                    <a href="#contact" class="footer-link">Contact</a>
+                </div>
+            </div>
+            <div style="margin-top: 1.5rem; text-align: center;">
+                <p style="font-size: 0.85rem; color: var(--color-muted);">Built with HTML, CSS, and JavaScript</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
