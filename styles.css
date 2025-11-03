@@ -252,7 +252,7 @@ h4 { font-size: 1.75rem; }
     display: flex;
     align-items: center;
     justify-content: center;
-    padding-top: 5rem;
+    padding-top: 10rem;
     position: relative;
     overflow: hidden;
 }
@@ -761,4 +761,5 @@ section {
 .fade-in.visible {
     opacity: 1;
     transform: translateY(0);
+
 }
